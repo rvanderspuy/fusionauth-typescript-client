@@ -5470,6 +5470,10 @@ export interface SAMLv2IdentityProvider extends BaseIdentityProvider<SAMLv2Appli
   useNameIdForEmail?: boolean;
 }
 
+export interface SearchEngineConfiguration {
+  searchEngineType?: string;
+}
+
 /**
  * Search API request.
  *
@@ -5588,6 +5592,7 @@ export interface SystemConfiguration {
   eventLogConfiguration?: EventLogConfiguration;
   loginRecordConfiguration?: LoginRecordConfiguration;
   reportTimezone?: string;
+  searchEngineConfiguration?: SearchEngineConfiguration;
   uiConfiguration?: UIConfiguration;
 }
 
