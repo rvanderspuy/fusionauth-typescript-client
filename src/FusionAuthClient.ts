@@ -3937,6 +3937,8 @@ export interface EmailAddress {
  * @author Brian Pontarelli
  */
 export interface EmailConfiguration {
+  defaultFromEmail?: string;
+  defaultFromName?: string;
   forgotPasswordEmailTemplateId?: UUID;
   host?: string;
   password?: string;
