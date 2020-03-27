@@ -3906,6 +3906,10 @@ export interface DisplayableRawLogin extends RawLogin {
 export interface DomainBasedIdentityProvider {
 }
 
+export interface ElasticSearchEngineConfiguration {
+  serviceURL?: string;
+}
+
 /**
  * This class is an abstraction of a simple email message.
  *
@@ -5473,6 +5477,7 @@ export interface SAMLv2IdentityProvider extends BaseIdentityProvider<SAMLv2Appli
 }
 
 export interface SearchEngineConfiguration {
+  elasticsearch?: ElasticSearchEngineConfiguration;
   searchEngineType?: string;
 }
 
