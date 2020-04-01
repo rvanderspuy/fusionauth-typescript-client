@@ -3906,10 +3906,6 @@ export interface DisplayableRawLogin extends RawLogin {
 export interface DomainBasedIdentityProvider {
 }
 
-export interface ElasticSearchEngineConfiguration {
-  serviceURL?: string;
-}
-
 /**
  * This class is an abstraction of a simple email message.
  *
@@ -5476,11 +5472,6 @@ export interface SAMLv2IdentityProvider extends BaseIdentityProvider<SAMLv2Appli
   useNameIdForEmail?: boolean;
 }
 
-export interface SearchEngineConfiguration {
-  elasticsearch?: ElasticSearchEngineConfiguration;
-  searchEngineType?: string;
-}
-
 /**
  * Search API request.
  *
@@ -5599,7 +5590,6 @@ export interface SystemConfiguration {
   eventLogConfiguration?: EventLogConfiguration;
   loginRecordConfiguration?: LoginRecordConfiguration;
   reportTimezone?: string;
-  searchEngineConfiguration?: SearchEngineConfiguration;
   uiConfiguration?: UIConfiguration;
 }
 
