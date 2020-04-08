@@ -5611,6 +5611,12 @@ export interface SystemConfigurationResponse {
   systemConfiguration?: SystemConfiguration;
 }
 
+/**
+ * @author Daniel DeGroff
+ */
+export interface SystemLogsExportRequest extends BaseExportRequest {
+}
+
 export interface Templates {
   emailComplete?: string;
   emailSend?: string;
