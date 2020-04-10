@@ -5410,6 +5410,7 @@ export interface RegistrationRequest {
  */
 export interface RegistrationResponse {
   registration?: UserRegistration;
+  token?: string;
   user?: User;
 }
 
@@ -6328,6 +6329,7 @@ export interface UserRequest {
  * @author Brian Pontarelli
  */
 export interface UserResponse {
+  token?: string;
   user?: User;
 }
 
