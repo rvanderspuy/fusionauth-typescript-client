@@ -5616,6 +5616,7 @@ export interface SystemConfigurationResponse {
  * @author Daniel DeGroff
  */
 export interface SystemLogsExportRequest extends BaseExportRequest {
+  lastNBytes?: number;
 }
 
 export interface Templates {
