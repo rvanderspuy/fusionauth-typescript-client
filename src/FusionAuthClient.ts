@@ -3434,6 +3434,7 @@ export interface Authenticator {
   httpAuthenticationPassword?: string;
   httpAuthenticationUsername?: string;
   id?: UUID;
+  insertInstant?: number;
   name?: string;
   sslCertificateId?: UUID;
   type?: AuthenticatorType;
@@ -3452,7 +3453,6 @@ export interface AuthenticatorRequest {
  */
 export interface AuthenticatorResponse {
   authenticator?: Authenticator;
-  authenticators?: Array<Authenticator>;
 }
 
 /**
@@ -3461,7 +3461,8 @@ export interface AuthenticatorResponse {
  * @author Trevor Smith
  */
 export enum AuthenticatorType {
-  LDAP
+  ldap,
+  generic
 }
 
 /**
