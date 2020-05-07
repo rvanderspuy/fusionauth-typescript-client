@@ -3424,6 +3424,47 @@ export interface AuthenticationTokenConfiguration extends Enableable {
 }
 
 /**
+ * Models an external authenticator.
+ *
+ * @author Trevor Smith
+ */
+export interface Authenticator {
+  data?: Record<string, any>;
+  headers?: HTTPHeaders;
+  httpAuthenticationPassword?: string;
+  httpAuthenticationUsername?: string;
+  id?: UUID;
+  name?: string;
+  sslCertificateId?: UUID;
+  type?: AuthenticatorType;
+  uri?: string;
+}
+
+/**
+ * @author Trevor Smith
+ */
+export interface AuthenticatorRequest {
+  authenticator?: Authenticator;
+}
+
+/**
+ * @author Trevor Smith
+ */
+export interface AuthenticatorResponse {
+  authenticator?: Authenticator;
+  authenticators?: Array<Authenticator>;
+}
+
+/**
+ * The types of authenticators.
+ *
+ * @author Trevor Smith
+ */
+export enum AuthenticatorType {
+  LDAP
+}
+
+/**
  * Base-class for all FusionAuth events.
  *
  * @author Brian Pontarelli
