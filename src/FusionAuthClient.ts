@@ -3453,6 +3453,7 @@ export interface AuthenticatorRequest {
  */
 export interface AuthenticatorResponse {
   authenticator?: Authenticator;
+  authenticators?: Array<Authenticator>;
 }
 
 /**
