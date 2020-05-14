@@ -3436,7 +3436,7 @@ export interface Authenticator {
   id?: UUID;
   insertInstant?: number;
   name?: string;
-  sslCertificateId?: UUID;
+  sslCertificateKeysId?: UUID;
   type?: AuthenticatorType;
   uri?: string;
 }
