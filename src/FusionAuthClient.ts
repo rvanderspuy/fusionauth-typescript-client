@@ -4477,6 +4477,12 @@ export interface JSONWebKey {
 }
 
 /**
+ * Interface for all identity providers that have a known JWKS endpoint.
+ */
+export interface JWKSBasedIdentityProvider {
+}
+
+/**
  * @author Daniel DeGroff
  */
 export interface JWKSResponse {
@@ -5251,6 +5257,7 @@ export interface RegistrationRequest {
  * @author Brian Pontarelli
  */
 export interface RegistrationResponse {
+  refreshToken?: string;
   registration?: UserRegistration;
   token?: string;
   user?: User;
