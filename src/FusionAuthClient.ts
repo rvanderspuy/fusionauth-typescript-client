@@ -3264,6 +3264,29 @@ export enum Algorithm {
 }
 
 /**
+ * @author Daniel DeGroff
+ */
+export interface AppleApplicationConfiguration extends BaseIdentityProviderApplicationConfiguration {
+  buttonText?: string;
+  keyId?: UUID;
+  scope?: string;
+  servicesId?: string;
+  teamId?: string;
+}
+
+/**
+ * @author Daniel DeGroff
+ */
+export interface AppleIdentityProvider extends BaseIdentityProvider<AppleApplicationConfiguration> {
+  buttonText?: string;
+  keyId?: UUID;
+  lambdaConfiguration?: LambdaConfiguration;
+  scope?: string;
+  servicesId?: string;
+  teamId?: string;
+}
+
+/**
  * @author Seth Musselman
  */
 export interface Application {
@@ -4343,7 +4366,8 @@ export enum IdentityProviderType {
   Google,
   Twitter,
   SAMLv2,
-  HYPR
+  HYPR,
+  Apple
 }
 
 /**
@@ -4547,13 +4571,13 @@ export interface Key {
   certificate?: string;
   certificateInformation?: CertificateInformation;
   expirationInstant?: number;
+  hasPrivateKey?: boolean;
   id?: UUID;
   insertInstant?: number;
   issuer?: string;
   kid?: string;
   length?: number;
   name?: string;
-  pair?: boolean;
   privateKey?: string;
   publicKey?: string;
   secret?: string;
