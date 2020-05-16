@@ -3444,6 +3444,24 @@ export interface Authenticator {
 /**
  * @author Trevor Smith
  */
+export interface AuthenticatorPolicy {
+  authenticatorId?: UUID;
+  data?: Record<string, any>;
+  migrateIdentity?: boolean;
+  run?: AuthenticatorPolicyTrigger;
+  sequence?: number;
+}
+
+/**
+ * @author Trevor Smith
+ */
+export enum AuthenticatorPolicyTrigger {
+  always
+}
+
+/**
+ * @author Trevor Smith
+ */
 export interface AuthenticatorRequest {
   authenticator?: Authenticator;
 }
@@ -5508,6 +5526,7 @@ export interface Templates {
  * @author Daniel DeGroff
  */
 export interface Tenant {
+  authenticatorPolicies?: Array<AuthenticatorPolicy>;
   configured?: boolean;
   data?: Record<string, any>;
   emailConfiguration?: EmailConfiguration;
