@@ -3653,13 +3653,27 @@ export enum ContentStatus {
   REJECTED
 }
 
+/**
+ * @author Trevor Smith
+ */
 export interface CORSConfiguration extends Enableable {
   allowCredentials?: boolean;
   allowedHeaders?: Array<string>;
   allowedMethods?: Array<HTTPMethod>;
   allowedOrigins?: Array<string>;
   exposedHeaders?: Array<string>;
+  identityProviderOverride?: Record<UUID, CORSOverride>;
   preflightMaxAgeInSeconds?: number;
+}
+
+/**
+ * @author Daniel DeGroff
+ */
+export interface CORSOverride {
+  allowedHeaders?: Array<string>;
+  allowedMethods?: Array<HTTPMethod>;
+  allowedOrigins?: Array<string>;
+  exposedHeaders?: Array<string>;
 }
 
 /**
