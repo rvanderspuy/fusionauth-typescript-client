@@ -3666,16 +3666,6 @@ export interface CORSConfiguration extends Enableable {
 }
 
 /**
- * @author Daniel DeGroff
- */
-export interface CORSOverride {
-  allowedHeaders?: Array<string>;
-  allowedMethods?: Array<HTTPMethod>;
-  allowedOrigins?: Array<string>;
-  exposedHeaders?: Array<string>;
-}
-
-/**
  * @author Brian Pontarelli
  */
 export interface Count {
@@ -5298,12 +5288,6 @@ export interface RememberPreviousPasswords extends Enableable {
  */
 export interface Requirable extends Enableable {
   required?: boolean;
-}
-
-/**
- * Interface for any object that requires CORS configuration.
- */
-export interface RequiresCORSConfiguration {
 }
 
 /**
