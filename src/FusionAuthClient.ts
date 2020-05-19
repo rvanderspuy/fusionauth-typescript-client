@@ -3280,7 +3280,6 @@ export interface AppleApplicationConfiguration extends BaseIdentityProviderAppli
 export interface AppleIdentityProvider extends BaseIdentityProvider<AppleApplicationConfiguration> {
   buttonText?: string;
   keyId?: UUID;
-  lambdaConfiguration?: LambdaConfiguration;
   scope?: string;
   servicesId?: string;
   teamId?: string;
@@ -3471,6 +3470,7 @@ export interface BaseIdentityProvider<D extends BaseIdentityProviderApplicationC
   data?: Record<string, any>;
   debug?: boolean;
   id?: UUID;
+  lambdaConfiguration?: LambdaConfiguration;
   name?: string;
   type?: IdentityProviderType;
 }
@@ -3662,7 +3662,6 @@ export interface CORSConfiguration extends Enableable {
   allowedMethods?: Array<HTTPMethod>;
   allowedOrigins?: Array<string>;
   exposedHeaders?: Array<string>;
-  identityProviderOverride?: Record<UUID, CORSOverride>;
   preflightMaxAgeInSeconds?: number;
 }
 
@@ -4491,9 +4490,9 @@ export interface JSONWebKey {
 }
 
 /**
- * Interface for all identity providers that have a known JWKS endpoint.
+ * Interface for any object that can provide JSON Web key Information.
  */
-export interface JWKSBasedIdentityProvider {
+export interface JSONWebKeyInfoProvider {
 }
 
 /**
@@ -4693,7 +4692,8 @@ export enum LambdaType {
   JWTPopulate,
   OpenIDReconcile,
   SAMLv2Reconcile,
-  SAMLv2Populate
+  SAMLv2Populate,
+  GenericIdpReconcile
 }
 
 /**
@@ -5058,7 +5058,6 @@ export interface OpenIdConnectIdentityProvider extends BaseIdentityProvider<Open
   buttonImageURL?: string;
   buttonText?: string;
   domains?: Array<string>;
-  lambdaConfiguration?: LambdaConfiguration;
   oauth2?: IdentityProviderOauth2Configuration;
 }
 
@@ -5302,6 +5301,12 @@ export interface Requirable extends Enableable {
 }
 
 /**
+ * Interface for any object that requires CORS configuration.
+ */
+export interface RequiresCORSConfiguration {
+}
+
+/**
  * @author Brian Pontarelli
  */
 export interface SAMLv2ApplicationConfiguration extends BaseIdentityProviderApplicationConfiguration {
@@ -5332,7 +5337,6 @@ export interface SAMLv2IdentityProvider extends BaseIdentityProvider<SAMLv2Appli
   idpEndpoint?: string;
   issuer?: string;
   keyId?: UUID;
-  lambdaConfiguration?: LambdaConfiguration;
   useNameIdForEmail?: boolean;
 }
 
