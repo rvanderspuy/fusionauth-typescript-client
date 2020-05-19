@@ -3481,7 +3481,8 @@ export interface AuthenticatorResponse {
  */
 export enum AuthenticatorType {
   ldap,
-  generic
+  generic,
+  fusionAuth
 }
 
 /**
@@ -4026,6 +4027,14 @@ export enum ExpiryUnit {
   WEEKS,
   MONTHS,
   YEARS
+}
+
+/**
+ * @author Trevor Smith
+ */
+export interface ExternalAuthenticationRequest {
+  loginId?: string;
+  password?: string;
 }
 
 /**
